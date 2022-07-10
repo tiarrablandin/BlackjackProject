@@ -23,27 +23,19 @@ public class BlackjackApp {
 		dealer.shuffle();
 		player.getBlackjackHand().addCard(dealer.deal());
 		dealer.getBlackjackHand().addCard(dealer.deal());
+		dealer.displayHand();
 		player.getBlackjackHand().addCard(dealer.deal());
 		dealer.getBlackjackHand().addCard(dealer.deal());
+		player.displayHand();
 
 		if (player.getBlackjackHand().isBlackjack()) {
-			player.displayHand();
 			dealer.displayHand();
 			System.out.println("\nBlackjack. Player wins.");
 		} else if (dealer.getBlackjackHand().isBlackjack()) {
-			player.displayHand();
 			dealer.displayHand();
 			System.out.println("\nBlackjack. House wins.");
-		} else if (player.getBlackjackHand().isBust()) {
-			player.displayHand();
-			dealer.displayHand();
-			System.out.println("\nBust. House wins.");
-		} else if (dealer.getBlackjackHand().isBust()) {
-			player.displayHand();
-			dealer.displayHand();
-			System.out.println("\nBust. Player wins.");
-		} else {
-			player.displayHand();
+		} 
+		else {
 			System.out.println("\nHit or Stay?");
 
 			while (player.getBlackjackHand().getHandValue() < 22) {
@@ -104,13 +96,16 @@ public class BlackjackApp {
 							}
 						}
 					}
+					
 					break;
+					
 				} else {
 					System.out.println("\nPlease choose Hit or Stay");
 				}
 			}
 
 		}
+		sc.close();
 	}
 
 }

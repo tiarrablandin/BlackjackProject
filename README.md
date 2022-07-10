@@ -6,7 +6,7 @@
 
 # Technologies Used
 
-<b> Java, file i/o, Interfaces
+<b> Eclipse, Java, Git, GitHub, file i/o, Interfaces
 
 # Lessons Learned
 
