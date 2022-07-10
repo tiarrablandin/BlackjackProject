@@ -1,20 +1,17 @@
 package com.skilldistillery.blackjack.entities;
 
 public class Player {
+	protected BlackjackHand blackjackHand = new BlackjackHand();
 
-	public void getCards() {
-		
+	public BlackjackHand getBlackjackHand() {
+		return blackjackHand;
 	}
 	
-	public void hit() {
-		if(hand < 17) {
-			// hit
-		}
+	public void setBlackjackHand(BlackjackHand hand) {
+		this.blackjackHand = hand;
 	}
 	
-	public void stay() {
-		if(hand > 17) {
-			// stay
-		}
+	public void displayHand() {
+		System.out.println(blackjackHand.toString() +  " Value: " + blackjackHand.getHandValue());
 	}
 }

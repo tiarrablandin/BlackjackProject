@@ -1,37 +1,25 @@
 package com.skilldistillery.blackjack.entities;
 
-import java.util.*;
+public class Dealer extends Player{
 
-public class Dealer {
+	private Deck deck = new Deck();
 	
 	public Dealer() {}
 	
+	
 	public void shuffle() {
-		Deck deck = new Deck();
 		
-		deck.shuffle(); // do I need this since it's in the deck?
+		deck.shuffle();
 	}
 	
-	public List<Card> deal(int howMany, Deck deck) {
-		List<Card> dealtCards = new ArrayList<>();
-			
-		for(int cardNumber = 0; cardNumber < howMany; cardNumber++) {
-			dealtCards.add(deck.dealCard());
-		}
-		return dealtCards;
-	}
-
-	public void hit() {
-		if(hand < 17) {
-			// hit
-		}
+	public Card deal() {
+		return deck.dealCard();
 	}
 	
-	public void stay() {
-		if(hand > 17) {
-			// stay
-		}
-		
+	@Override
+	public void displayHand() {
+		System.out.print("Dealer ");
+		super.displayHand();
 	}
-
+	
 }

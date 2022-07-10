@@ -6,7 +6,7 @@ public abstract class Hand {
 	
 	protected List<Card> hand = new ArrayList<>();
 	
-	public Hand(Deck deck) {}
+	public Hand() {}
 	
 	public void addCard(Card card) {
 		hand.add(card);
